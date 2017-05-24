@@ -15,17 +15,9 @@ var app = app || {};
     $.get('/github/user/repos')
     .then(data => repos.all = data, err =>
     console.error(err))
-    .then(callback)
+    .then(callback);
   };
 
-  //   $.ajax({
-  //     url: `https://api.github.com/user/repos`,
-  //     type: 'GET',
-  //     headers: {'Authorization': `token ${githubToken}`}
-  //   })
-  //   .then(data => repos.all = data, err => console.error(err)) // es6 syntax arrow functions
-  //   .then(callback);
-  // };
 
   repos.with = attr => repos.all.filter(repo => repo[attr]);
 
